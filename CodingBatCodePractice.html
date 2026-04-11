@@ -21,6 +21,122 @@
 <body>
     <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
     <div>
+        <p id="clock5463">Clock</p>
+        <p>Completed on 4/12/2026 11:55 PM</p>
+        <script>
+            let now_asd = new Date();
+            let seconds_oiad = now_asd.getSeconds();
+            document.getElementById('clock5463').innerHTML = 'Seconds: ' + seconds_oiad;
+        </script>
+
+        <script>
+            "use srtict";
+            // Completed on 4/12/2026 11:55 PM
+            // Completed on VSCode HTML JavaScript first and convert to Java
+            // Saved to CodingBat.com
+            // String-3 > equalIsNot
+
+            function equalIsNot_function(string) {
+                let count_is_var = 0;
+                let count_not_var = 0;
+
+                for (let i = 0; i < string.length - 1; i++) {
+                    let is_found_var = string[i] === 'i' && string[i + 1] === 's';
+                    let not_found_var = string[i] === 'n' && string[i + 1] === 'o' && string[i + 2] === 't';
+
+                    if (string.length - 2) {
+                        if (is_found_var) {
+                            count_is_var++;
+                        }
+                    }
+                    if (string.length - 3) {
+                        if (not_found_var) {
+                            count_not_var++;
+                        }
+                    }
+                }
+                if (count_is_var === count_not_var) {
+                    return true;
+                }
+                return false;
+            }
+
+            function test_functionHT76() {
+                let testMRA7_var = [
+                    { input: "This is not", expectation: false },          // test 1
+                    { input: "This is notnot", expectation: true },        // test 2
+                    { input: "noisxxnotyynotxisi", expectation: true },    // test 3
+                    { input: "noisxxnotyynotxsi", expectation: false },    // test 4
+                    { input: "xxxyyyzzzintint", expectation: true },       // test 5
+                    { input: "", expectation: true },                      // test 6
+                    { input: "isisnotnot", expectation: true },            // test 7
+                    { input: "isisnotno7Not", expectation: false },        // test 8
+                    { input: "isnotis", expectation: false },              // test 9
+                    { input: "mis3notpotbotis", expectation: false }       // test 10
+                ];
+                for (let i = 0; i < testMRA7_var.length; i++) {
+                    let result = equalIsNot_function(testMRA7_var[i].input);
+                    if (result === testMRA7_var[i].expectation) {
+                        document.write('Test ' + (i + 1) + ': <span style="color: greenyellow">Passed</span><br>');
+                    } else {
+                        document.write('Test ' + (i + 1) + ': <span style="color: rgb(206, 79, 79)">Failed</span><br>');
+                    }
+                }
+            }
+            test_functionHT76();
+        </script>
+    </div>
+    <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+    <div>
+        <p id="clock1">Clock</p>
+        <p>Completed on 4/11/2026 8:50 PM</p>
+        <script>
+            let now1 = new Date();
+            let seconds1 = now1.getSeconds();
+            document.getElementById('clock1').innerHTML = 'Seconds: ' + seconds1;
+        </script>
+
+        <script>
+            "use srtict";
+            // Completed on 4/11/2026 8:50 PM
+            // Completed on VSCode HTML JavaScript first and convert to Java
+            // Saved to CodingBat.com
+            // Array-2 > has22
+            function has22(numbers) {
+                // Loop the numbers and check 2 array elements next to each other if they are equal to 2
+                // If so, return true
+                // Otherwise return false
+                for (let i = 1; i < numbers.length; i++) {
+                    if (numbers[i - 1] === 2 && numbers[i] === 2) {
+                        return true;
+                    }
+                }
+                return false;
+            }
+
+            function test_function() {
+                let test = [
+                    { input: [1, 2, 2], expected: true },
+                    { input: [1, 2, 1, 2], expected: false },
+                    { input: [2, 1, 2], expected: false },
+                ];
+
+                for (let i = 0; i < test.length; i++) {
+                    let result = has22(test[i].input);
+
+                    if (result === test[i].expected) {
+                        document.write('Test ' + (i + 1) + ': <span style="color: greenyellow">Passed</span><br>');
+                    } else {
+                        document.write('Test ' + (i + 1) + ': <span style="color: rgb(206, 79, 79)">Failed</span><br>');
+                    }
+                }
+            }
+
+            test_function();
+        </script>
+    </div>
+    <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+    <div>
         <p id="clock">Clock</p>
         <p id="error_msg">No error message</p>
         <p>Completed on 4/11/2026 5:50 PM</p>
@@ -68,9 +184,9 @@
                 for (let i = 0; i < test.length; i++) {
                     let result = fizzbuzz(...test[i].input);
                     if (result.toString() == test[i].expected.toString()) {
-                        document.write('Test ' + (i + 1) + ': Passed<br>');
+                        document.write('Test ' + (i + 1) + ': <span style="color: greenyellow">Passed</span><br>');
                     } else {
-                        document.write('Test ' + (i + 1) + ': Failed<br>');
+                        document.write('Test ' + (i + 1) + ': <span style="color: rgb(206, 79, 79)">Failed</span><br>');
                     }
                 }
             }
@@ -141,12 +257,11 @@
                 ];
                 for (let i = 0; i < test1.length; i++) {
                     let result = sum67(test1[i].input);
-
                     if (result == test1[i].expected) {
-                        document.write('Test ' + (i + 1) + ': Pass' + '<br>');
+                        document.write('Test ' + (i + 1) + ': <span style="color: greenyellow">Pass</span><br>');
                     } else {
-                        document.write('Test ' + (i + 1) + ': Fail' + ' -- ' +
-                            'Expected result: ' + test1[i].expected + ' -- ' + 'Got: ' + sum67(test1[i].input) + '<br>');
+                        document.write('Test ' + (i + 1) + ': <span style="color: rgb(206, 79, 79)">Fail</span>' + ' -- ' +
+                            'Expected result: ' + test1[i].expected + ' -- ' + 'Got: ' + result + '<br>');
                     }
                 }
             }
@@ -233,11 +348,11 @@
             for (let i = 0; i < tests.length; i++) {
                 let result_var = centeredAverage(tests[i].input);
                 if (result_var == tests[i].expected) {
-                    document.write('Test ' + (i + 1) + ': Pass<br>');
+                    document.write('Test ' + (i + 1) + ': <span style="color: greenyellow">Pass</span><br>');
                 } else {
-                    document.write('Test ' + (i + 1) + ': Fail' +
-                        ' --> Result: ' + result_var +
-                        ' --> Expected: ' + tests[i].expected + ' <br>');
+                    document.write('Test ' + (i + 1) + ': <span style="color: rgb(206, 79, 79)">Fail</span>' +
+                        ' --- Result: ' + result_var +
+                        ' --- Expected: ' + tests[i].expected + ' <br>');
                 }
             }
         </script>
@@ -298,11 +413,10 @@
             ];
             for (let i = 0; i < tests1.length; i++) {
                 let result = countYZ_function(tests1[i].input);
-
                 if (result == tests1[i].expected) {
-                    document.write('Test ' + (i + 1) + ': Pass<br>');
+                    document.write('Test ' + (i + 1) + ': <span style="color: greenyellow">Pass</span><br>');
                 } else {
-                    document.write('Test ' + (i + 1) + ': Fail' + ' --- Got: ' + result +
+                    document.write('Test ' + (i + 1) + ': <span style="color: rgb(206, 79, 79)">Fail</span>' + ' --- Got: ' + result +
                         ' --- Expected: ' + tests1[i].expected + '<br>');
                 }
             }
@@ -312,3 +426,5 @@
 </body>
 
 </html>
+<!-- can you make the pass green and fail red just like in the equalIsNot_function-->
+<!-- only change the line that epected and nothing else. -->
