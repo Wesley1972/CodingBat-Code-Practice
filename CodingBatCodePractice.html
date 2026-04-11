@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            border: red solid 1px;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            padding-top: 20px;
+            margin-left: 10%;
+            margin-right: 10%;
+            padding-left: 10%;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+    <div>
+        <h3>Array-2 > sum67</h3>
+        <p>Completed on 4/11/2026 1:25 AM</p>
+        <script>
+            "use srtict";
+            // Completed on 4/11/2026 1:25 AM
+            // Completed on VSCode HTML JavaScript first and convert to Java
+            // Saved to CodingBat.com
+            // Array-2 > sum67
+
+            // Return the sum of the numbers in the array, except ignore sections of numbers
+            // starting with a 6 and extending to the next 7(every 6 will be followed by at
+            // least one 7).Return 0 for no numbers.
+
+            // Check if array is empty and return 0
+            // Loop and add every element until 6 is found and stop
+            // Ignore everything after 6 until the last element is 7
+            // After 7 add everything again
+
+            function sum67(array) {
+                // Loop and add current array element to sum
+                // Check if current array element is 6 and stop adding to sum
+                // Continue loop until the end
+                // Check if the current array element is 7
+                // After array element 7, continue adding to sum
+                // Return sum
+                let continue_adding = true;
+                let sum = 0;
+                for (let i = 0; i < array.length; i++) {
+                    if (array[i] == 6) {
+                        continue_adding = false;
+                    }
+                    if (array[i] == 7 && continue_adding == false) {
+                        continue_adding = true;
+                        continue;
+                    }
+                    if (continue_adding == true) {
+                        sum += array[i];
+                    }
+                }
+                return sum;
+            }
+            function test_function() {
+                let test1 = [
+                    { input: [1, 2, 2], expected: 5 }, // ------------------------- Test 1
+                    { input: [1, 2, 2, 6, 99, 99, 7], expected: 5 }, // ----------- Test 2
+                    { input: [1, 1, 6, 7, 2], expected: 4 }, // ------------------- Test 3
+                    { input: [1, 6, 2, 2, 7, 1, 6, 99, 99, 7], expected: 2 }, // -- Test 4
+                    { input: [1, 6, 2, 6, 2, 7, 1, 6, 99, 99, 7], expected: 2 }, // Test 5
+                    { input: [2, 7, 6, 2, 6, 7, 2, 7], expected: 18 }, // --------- Test 6
+                    { input: [2, 7, 6, 2, 6, 2, 7], expected: 9 }, // ------------- Test 7
+                    { input: [1, 6, 7, 7], expected: 8 }, // ---------------------- Test 8
+                    { input: [6, 7, 1, 6, 7, 7], expected: 8 }, // ---------------- Test 9
+                    { input: [6, 8, 1, 6, 7], expected: 0 }, // ------------------- Test 10
+                    { input: [], expected: 0 }, // -------------------------------- Test 11
+                    { input: [6, 7, 11], expected: 11 }, // ----------------------- Test 12
+                    { input: [11, 6, 7, 11], expected: 22 }, // ------------------- Test 13
+                    { input: [2, 2, 6, 7, 7], expected: 11 }, // ------------------ Test 14
+                    { input: [2, 2, 6, 4, 5, 3, 4, 7, 7], expected: 11 }, // ------ Test 15
+                    { input: [6, 7], expected: 0 }, // ---------------------------- Test 16
+                ];
+                for (let i = 0; i < test1.length; i++) {
+                    let result = sum67(test1[i].input);
+
+                    if (result == test1[i].expected) {
+                        document.write('Test ' + (i + 1) + ': Pass' + '<br>');
+                    } else {
+                        document.write('Test ' + (i + 1) + ': Fail' + ' -- ' +
+                            'Expected result: ' + test1[i].expected + ' -- ' + 'Got: ' + sum67(test1[i].input) + '<br>');
+                    }
+                }
+            }
+            test_function();
+        </script>
+    </div>
+    <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+    <div>
+        <h3>JAVA Array-2 > centeredAverage</h3>
+        <p>Completed on 4/9/2026 8:40 PM</p>
+        <script>
+            "use srtict";
+            // Completed on 4/9/2026 8:40 PM
+            // Completed on VSCode HTML JavaScript first and convert to Java
+            // Saved to CodingBat.com
+            // JAVA Array-2 > centeredAverage
+
+            // Return the "centered" average of an array of ints, 
+            // which we'll say is the mean average of the values, 
+            // except ignoring the largest and smallest values in 
+            // the array. If there are multiple copies of the 
+            // smallest value, ignore just one copy, and likewise 
+            // for the largest value. Use int division to produce 
+            // the final average. You may assume that the array is 
+            // length 3 or more.
+            function centeredAverage(score) {
+                // check if score length is over 3
+                // loop and retrieve the max and min values
+                // overwrite the min and max values to "Removed"
+                // create a new array without the max and min values
+                // add the remaining values and divide the result by the length of the array
+                // return the result
+                let new_array_score_var = [...score];
+                let max_var = -Infinity;
+                let min_var = Infinity;
+                let max_index_of_var = 0;
+                let min_index_of_var = 0;
+                if (score.length > 2) {
+                    for (let i = 0; i < new_array_score_var.length; i++) {
+                        if (new_array_score_var[i] > max_var) {
+                            max_var = new_array_score_var[i];
+                            max_index_of_var = [i];
+                        }
+                        if (new_array_score_var[i] < min_var) {
+                            min_var = new_array_score_var[i];
+                            min_index_of_var = [i];
+                        }
+                    }
+                    new_array_score_var[max_index_of_var] = 'Removed';
+                    new_array_score_var[min_index_of_var] = 'Removed';
+                    let new_array_max_and_min_remove = [];
+                    let sum = 0;
+                    for (let i = 0; i < new_array_score_var.length; i++) {
+                        if (typeof new_array_score_var[i] == 'string') {
+                            continue;
+                        }
+                        new_array_max_and_min_remove.push(new_array_score_var[i]);
+                        sum += new_array_score_var[i];
+                    }
+                    return sum / new_array_max_and_min_remove.length;
+                }
+                return 0;
+            }
+            // ✅ test cases (array of objects)
+            const tests = [
+                { input: [1, 2, 3, 4, 100], expected: 3 },
+                { input: [1, 1, 5, 5, 10, 8, 7], expected: 5 },
+                { input: [-10, -4, -2, -4, -2, 0], expected: -3 },
+                { input: [5, 3, 4, 6, 2], expected: 4 },
+                { input: [5, 3, 4, 0, 100], expected: 4 },
+                { input: [100, 0, 5, 3, 4], expected: 4 },
+                { input: [4, 0, 100], expected: 4 },
+                { input: [0, 2, 3, 4, 100], expected: 3 },
+                { input: [1, 1, 100], expected: 1 },
+                { input: [7, 7, 7], expected: 7 },
+                { input: [1, 7, 8], expected: 7 },
+                { input: [1, 1, 99, 99], expected: 50 },
+                { input: [1000, 0, 1, 99], expected: 50 },
+                { input: [4, 4, 4, 4, 5], expected: 4 },
+                { input: [4, 4, 4, 1, 5], expected: 4 },
+                { input: [6, 4, 8, 12, 3], expected: 6 }
+            ];
+            // ✅ loop to check pass/fail
+            for (let i = 0; i < tests.length; i++) {
+                let result_var = centeredAverage(tests[i].input);
+                if (result_var == tests[i].expected) {
+                    document.write('Test ' + (i + 1) + ': Pass<br>');
+                } else {
+                    document.write('Test ' + (i + 1) + ': Fail' +
+                        ' --> Result: ' + result_var +
+                        ' --> Expected: ' + tests[i].expected + ' <br>');
+                }
+            }
+        </script>
+    </div>
+    <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+    <div>
+        <h3>JAVA String-3 > countYZ</h3>
+        <p>Completed on 4/9/2026 7:09 PM</p>
+        <script>
+            "use srtict";
+            // Completed on 4/9/2026 7:09 PM
+            // Completed on VSCode HTML JavaScript first and convert to Java
+            // Saved to CodingBat.com
+            // JAVA String-3 > countYZ
+
+            // Given a string, count the number of words ending in 'y' or 'z' -- 
+            // so the 'y' in "heavy" and the 'z' in "fez" count, but not the 'y'
+            // in "yellow"(not case sensitive).We'll say that a y or z is at the
+            // end of a word if there is not an alphabetic letter immediately following
+            // it. (Note: Character.isLetter(char) tests if a char is an alphabetic
+            // letter.)
+            function countYZ_function(str) {
+                // check if str length is over 2 characters long
+                // loop and check if the current index is not a character
+                // if not a character is found in the current index, check if the left side a Y or Z if yes, increase count
+                // check if the last character is a Y or Z if yes, inrease count
+                // return count
+                let count_var = 0;
+                let found = false;
+                if (str.length > 0) {
+                    for (let i = 0; i < str.length; i++) {
+                        if (!/[a-zA-Z]/.test(str[i])) {
+                            found = true;
+
+                            if (/[YyZz]/.test(str[i - 1])) {
+                                count_var += 1;
+                            }
+                        }
+                    }
+                    if (/[YyZz]/.test(str[str.length - 1])) {
+                        count_var += 1;
+                    }
+                }
+                return count_var;
+            }
+            let tests1 = [
+                { input: "fez day", expected: 2 },
+                { input: "day fez", expected: 2 },
+                { input: "day fyyyz", expected: 2 },
+                { input: "day yak", expected: 1 },
+                { input: "day:yak", expected: 1 },
+                { input: "!!day--yaz!!", expected: 2 },
+                { input: "yak zak", expected: 0 },
+                { input: "DAY abc XYZ", expected: 2 },
+                { input: "aaz yyz my", expected: 3 },
+                { input: "y2bz", expected: 2 },
+                { input: "zxyx", expected: 0 }
+            ];
+            for (let i = 0; i < tests1.length; i++) {
+                let result = countYZ_function(tests1[i].input);
+
+                if (result == tests1[i].expected) {
+                    document.write('Test ' + (i + 1) + ': Pass<br>');
+                } else {
+                    document.write('Test ' + (i + 1) + ': Fail' + ' --- Got: ' + result +
+                        ' --- Expected: ' + tests1[i].expected + '<br>');
+                }
+            }
+        </script>
+    </div>
+    <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+</body>
+
+</html>
