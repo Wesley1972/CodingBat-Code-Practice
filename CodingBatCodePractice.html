@@ -21,7 +21,141 @@
 <body>
     <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
     <div>
+        <p id="clock5463e1">Clock</p>
+        <p>Array-2 > lucky13</p>
+        <p>Completed on 4/12/2026 7:47 PM</p>
+        <script>
+            let now_asd1x = new Date();
+            let seconds_oiade0 = now_asd1x.getSeconds();
+            document.getElementById('clock5463e1').innerHTML = 'Seconds: ' + seconds_oiade0;
+        </script>
+
+        <script>
+            "use srtict";
+            // Completed on 4/12/2026 7:47 PM
+            // Completed on VSCode HTML JavaScript first and convert to Java
+            // Saved to CodingBat.com
+            // Array-2 > lucky13
+
+            // Given an array of ints, return true if the array contains no 1's and no 3's.
+
+            function lucky13(numbers) {
+                // Loop and check current array element if it '1' or '3'
+                // If true return 'true' else return 'false'
+                for (let i = 0; i < numbers.length; i++) {
+                    let target_found_var = numbers[i] === 1 || numbers[i] === 3;
+                    if (target_found_var) {
+                        return false;
+                    }
+                }
+                return true;
+            }
+
+            function testK9S6_function() {
+                let test = [
+                    { input: [0, 2, 4], expected: true },                         // test 1
+                    { input: [1, 2, 3], expected: false },                        // test 2
+                    { input: [1, 2, 4], expected: false },                        // test 3
+                    { input: [4, 3, 4], expected: false },                        // test 4
+                    { input: [3, 2, 8, 9, 5, 4, 0], expected: false },            // test 5
+                    { input: [2, 8, 9, 5, 4, 0], expected: true },                // test 6
+                    { input: [2, 7, 2, 8], expected: true },                      // test 7
+                    { input: [2, 7, 1, 8], expected: false },                     // test 8
+                    { input: [3, 7, 2, 8], expected: false },                     // test 9
+                    { input: [2, 7, 2, 1], expected: false },                     // test 10
+                    { input: [1, 2], expected: false },                           // test 11
+                    { input: [2, 2], expected: true },                            // test 12
+                    { input: [2], expected: true },                               // test 13
+                    { input: [3], expected: false },                              // test 14
+                    { input: [], expected: true }                                 // test 15
+                ];
+                for (let i = 0; i < test.length; i++) {
+                    let result = lucky13(test[i].input);
+                    let expected = test[i].expected
+
+                    if (result === expected) {
+                        document.write('Test ' + (i + 1) + ': <span style="color: greenyellow">Passed</span><br>');
+                    } else {
+                        document.write('Test ' + (i + 1) + ': <span style="color: rgb(206, 79, 79)">Failed: --- Expected ' + test[i].expected + ' --- Got: ' + result + '</span><br>');
+                    }
+                }
+            }
+            testK9S6_function();
+        </script>
+    </div>
+    <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+    <div>
+        <p id="clock5463e">Clock</p>
+        <p>Array-2 > withoutTen</p>
+        <p>Completed on 4/12/2026 4:40 PM</p>
+        <script>
+            let now_asd1 = new Date();
+            let seconds_oiade = now_asd1.getSeconds();
+            document.getElementById('clock5463e').innerHTML = 'Seconds: ' + seconds_oiade;
+        </script>
+
+        <script>
+            "use strict"
+            // Completed on 4/12/2026 4:40 PM
+            // Completed on VSCode HTML JavaScript first and convert to Java
+            // Saved to CodingBat.com
+            // Array-2 > withoutTen
+
+            // Return a version of the given array where all the 10's have been removed.
+            // The remaining elements should shift left towards the start of the array as 
+            // needed, and the empty spaces a the end of the array should be 0. 
+            // So {1, 10, 10, 2} yields {1, 2, 0, 0}. You may modify and return the given 
+            // array or make a new array.
+
+            function withoutTen(numbers) {
+                // Loop trough the array and store every elements in a new array
+                // If number '10' is detected, skip it
+                // Keep the original array length and keep the numbers next to each other
+                // Replace the '10's with '0'
+                // Return the new array
+                let new_array_var = [];
+                for (let i = 0; i < numbers.length; i++) {
+                    let current_not_10_var = numbers[i] != 10;
+                    if (current_not_10_var) {
+                        new_array_var.push(numbers[i]);
+                    }
+                }
+                for (let i = new_array_var.length; i < numbers.length; i++) {
+                    new_array_var.push(0);
+                }
+                return new_array_var;
+            }
+
+            function testJU87_function() {
+                let test = [
+                    { input: [1, 10, 10, 2], expectation: [1, 2, 0, 0] },            // test 1
+                    { input: [10, 2, 10], expectation: [2, 0, 0] },                  // test 2
+                    { input: [1, 99, 10], expectation: [1, 99, 0] },                 // test 3
+                    { input: [10, 13, 10, 14], expectation: [13, 14, 0, 0] },        // test 4
+                    { input: [10, 13, 10, 14, 10], expectation: [13, 14, 0, 0, 0] }, // test 5
+                    { input: [10, 10, 3], expectation: [3, 0, 0] },                  // test 6
+                    { input: [1], expectation: [1] },                                // test 7
+                    { input: [13, 1], expectation: [13, 1] },                        // test 8
+                    { input: [10], expectation: [0] },                               // test 9
+                    { input: [], expectation: [] }                                   // test 10
+                ];
+                for (let i = 0; i < test.length; i++) {
+                    let result = withoutTen(test[i].input);
+                    if (result.toString() === test[i].expectation.toString()) {
+                        document.write('Test ' + (i + 1) + ': <span style="color: greenyellow">Passed</span><br>');
+                    } else {
+                        document.write('Test ' + (i + 1) + ': <span style="color: rgb(206, 79, 79)">Failed: --- Expected ' + test[i].expectation + ' --- Got: ' + result + '</span><br>');
+                    }
+                }
+            }
+
+            testJU87_function();
+        </script>
+    </div>
+    <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+    <div>
         <p id="clock5463">Clock</p>
+        <h3>String-3 > equalIsNot</h3>
         <p>Completed on 4/12/2026 11:55 PM</p>
         <script>
             let now_asd = new Date();
@@ -35,15 +169,16 @@
             // Completed on VSCode HTML JavaScript first and convert to Java
             // Saved to CodingBat.com
             // String-3 > equalIsNot
-
             function equalIsNot_function(string) {
+                // Loop and check the two array elements next to each other for 'is' and count by 1 and stop the search at (.length - 2)
+                // Loop and check the three array elements next to each other for 'not' and count by 1 and stop the search at (.length - 3)
+                // Compare the 'is' and 'not' count
+                // If count is equal return true if not return false
                 let count_is_var = 0;
                 let count_not_var = 0;
-
                 for (let i = 0; i < string.length - 1; i++) {
                     let is_found_var = string[i] === 'i' && string[i + 1] === 's';
                     let not_found_var = string[i] === 'n' && string[i + 1] === 'o' && string[i + 2] === 't';
-
                     if (string.length - 2) {
                         if (is_found_var) {
                             count_is_var++;
@@ -60,7 +195,6 @@
                 }
                 return false;
             }
-
             function test_functionHT76() {
                 let testMRA7_var = [
                     { input: "This is not", expectation: false },          // test 1
@@ -89,6 +223,7 @@
     <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
     <div>
         <p id="clock1">Clock</p>
+        <h3>Array-2 > has22</h3>
         <p>Completed on 4/11/2026 8:50 PM</p>
         <script>
             let now1 = new Date();
@@ -113,17 +248,14 @@
                 }
                 return false;
             }
-
             function test_function() {
                 let test = [
                     { input: [1, 2, 2], expected: true },
                     { input: [1, 2, 1, 2], expected: false },
                     { input: [2, 1, 2], expected: false },
                 ];
-
                 for (let i = 0; i < test.length; i++) {
                     let result = has22(test[i].input);
-
                     if (result === test[i].expected) {
                         document.write('Test ' + (i + 1) + ': <span style="color: greenyellow">Passed</span><br>');
                     } else {
@@ -131,7 +263,6 @@
                     }
                 }
             }
-
             test_function();
         </script>
     </div>
@@ -139,6 +270,7 @@
     <div>
         <p id="clock">Clock</p>
         <p id="error_msg">No error message</p>
+        <h3>Array-2 > fizzBuzz</h3>
         <p>Completed on 4/11/2026 5:50 PM</p>
         <script>
             let now = new Date();
@@ -159,7 +291,6 @@
             }
             function fizzbuzz(start, end) {
                 let array = [];
-
                 for (let i = start; i < end; i++) {
                     if (i % 3 == 0 && i % 5 == 0) {
                         array.push('FizzBuzz');
@@ -426,5 +557,3 @@
 </body>
 
 </html>
-<!-- can you make the pass green and fail red just like in the equalIsNot_function-->
-<!-- only change the line that epected and nothing else. -->
