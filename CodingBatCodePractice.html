@@ -20,6 +20,291 @@
 
 <body>
     <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+    <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+    <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+    <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+    <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+    <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+    <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+    <div>
+        <p id="clock13z">Clock</p>
+        <p>Array-2 > isEverywhere</p>
+        <p>Completed on 4/13/2026 10:56 PM</p>
+        <script>
+            let now13z = new Date();
+            let seconds13z = now13z.getMilliseconds();
+            document.getElementById('clock13z').innerHTML = 'Milliseconds: ' + seconds13z;
+        </script>
+
+        <script>
+            "use strict";
+            // Completed on 4/14/2026 1:12 PM
+            // Completed on VSCode HTML JavaScript first and convert to Java
+            // Saved to CodingBat.com
+            // Array-2 > isEverywhere
+
+            function isEverywhere(numbers, value) { // JavaScript version
+                for (let i = 0; i < numbers.length - 1; i++) {
+                    if (numbers[i] === value || numbers[i + 1] === value) {
+                        continue;
+                    }
+                    return false;
+                }
+                return true;
+            }
+
+            test543_function();
+
+            function test543_function() {
+                let test = [
+                    { input: [1, 2, 1, 3], value: 1, expected: true },              // test 1
+                    { input: [1, 2, 1, 3], value: 2, expected: false },             // test 2
+                    { input: [1, 2, 1, 3, 4], value: 1, expected: false },          // test 3
+                    { input: [2, 1, 2, 1], value: 1, expected: true },              // test 4
+                    { input: [2, 1, 2, 1], value: 2, expected: true },              // test 5
+                    { input: [2, 1, 2, 3, 1], value: 2, expected: false },          // test 6
+                    { input: [3, 1], value: 3, expected: true },                    // test 7
+                    { input: [3, 1], value: 2, expected: false },                   // test 8
+                    { input: [3], value: 1, expected: true },                       // test 9
+                    { input: [], value: 1, expected: true },                        // test 10
+                    { input: [1, 2, 1, 2, 3, 2, 5], value: 2, expected: true },     // test 11
+                    { input: [1, 2, 1, 1, 1, 2], value: 2, expected: false },       // test 12
+                    { input: [2, 1, 2, 1, 1, 2], value: 2, expected: false },       // test 13
+                    { input: [2, 1, 2, 2, 2, 1, 1, 2], value: 2, expected: false }, // test 14
+                    { input: [2, 1, 2, 2, 2, 1, 2, 1], value: 2, expected: true },  // test 15
+                    { input: [2, 1, 2, 1, 2], value: 2, expected: true }            // test 16
+                ];
+                for (let i = 0; i < test.length; i++) {
+                    let result = isEverywhere(test[i].input, test[i].value);
+                    let expected = test[i].expected;
+                    if (result === expected) {
+                        document.write('Test ' + (i + 1) + ': <span style="color: greenyellow">Passed</span><br>');
+                    } else {
+                        document.write('Test ' + (i + 1) + ': <span style="color: rgb(206, 79, 79)">Failed: --- Expected ' + test[i].expected + ' --- Got: ' + result + '</span><br>');
+                    }
+                }
+            }
+        </script>
+    </div>
+    <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+    <div>
+        <p id="clock13s">Clock</p>
+        <p>Array-2 > no14</p>
+        <p>Completed on 4/13/2026 10:56 PM</p>
+        <p>No test code</p>
+        <script>
+            let now13s = new Date();
+            let seconds13s = now13s.getMilliseconds();
+            document.getElementById('clock13s').innerHTML = 'Milliseconds: ' + seconds13s;
+        </script>
+
+        <script>
+            "use strict";
+            // Completed on 4/13/2026 10:56 PM
+            // Completed on VSCode HTML JavaScript first and convert to Java
+            // Saved to CodingBat.com
+            // Array-2 > no14
+            let number1 = [2, 4, 1];
+            function no14(numbers) { // Javacript version
+                // why does this say for every element
+                // this would mean if a non 1 or a non 4 is found it would be false right?:
+                // Given an array of ints, return true if every element is a 1 or a 4.
+                let one_found = false;
+                let four_found = false;
+
+                for (let i = 0; i < numbers.length; i++) {
+                    if (numbers[i] === 1) {
+                        one_found = true;
+                    }
+                    if (numbers[i] === 4) {
+                        four_found = true;
+                    }
+                }
+
+                if (one_found && four_found) {
+                    return false;
+                }
+
+                return true;
+            }
+
+            document.write(no14(number1));
+        </script>
+    </div>
+    <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+    <div>
+        <p id="clock13">Clock</p>
+        <p>Array-2 > only14</p>
+        <p>Completed on 4/13/2026 9:50 PM</p>
+        <script>
+            let now131 = new Date();
+            let seconds131 = now131.getMilliseconds();
+            document.getElementById('clock13').innerHTML = 'Milliseconds: ' + seconds131;
+        </script>
+
+        <script>
+            "use strict";
+            // Return an array that contains the exact same numbers as the given array, 
+            // but rearranged so that all the even numbers come before all the odd 
+            // numbers. Other than that, the numbers can be in any order. You may modify 
+            // and return the given array, or make a new array.
+
+            function evenOdd(numbers) {
+                // Create two arrays, one array to store odd numbers and the other for even numbers
+                // Loop and check if current array element is even and store in the even array numbers
+                // If current array element is odd store it in the odd array numbers
+                // Comcat first array is the even array numbers and the second the odd array numbers
+                // Return the combines array numbers
+                let new_array = [];
+                let array_front = [];
+                let array_back = [];
+                for (let i = 0; i < numbers.length; i++) {
+                    if (numbers[i] % 2 === 0) {
+                        array_front.push(numbers[i]);
+                    }
+                    if (numbers[i] % 2 !== 0) {
+                        array_back.push(numbers[i]);
+                    }
+                }
+                new_array.push(array_front.concat(array_back));
+                return new_array;
+            }
+
+            testu8q7_function();
+
+            function testu8q7_function() {
+                let test = [
+                    { input: [1, 0, 1, 0, 0, 1, 1], expected: [0, 0, 0, 1, 1, 1, 1] },
+                    { input: [3, 3, 2], expected: [2, 3, 3] },
+                    { input: [2, 2, 2], expected: [2, 2, 2] },
+                    { input: [3, 2, 2], expected: [2, 2, 3] },
+                    { input: [1, 1, 0, 1, 0], expected: [0, 0, 1, 1, 1] },
+                    { input: [1], expected: [1] },
+                    { input: [1, 2], expected: [2, 1] },
+                    { input: [2, 1], expected: [2, 1] },
+                    { input: [], expected: [] }
+                ];
+
+                for (let i = 0; i < test.length; i++) {
+                    let result = evenOdd(test[i].input);
+                    let expected = test[i].expected;
+
+                    if (result.toString() === expected.toString()) {
+                        document.write('Test ' + (i + 1) + ': <span style="color: greenyellow">Passed</span><br>');
+                    } else {
+                        document.write('Test ' + (i + 1) + ': <span style="color: rgb(206, 79, 79)">Failed: --- Expected ' + test[i].expected + ' --- Got: ' + result + '</span><br>');
+                    }
+                }
+            }
+        </script>
+    </div>
+    <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+    <div>
+        <p id="clock13">Clock</p>
+        <p>Array-2 > only14</p>
+        <p>Completed on 4/13/2026 8:31 PM</p>
+        <script>
+            let now13 = new Date();
+            let seconds13 = now13.getMilliseconds();
+            document.getElementById('clock13').innerHTML = 'Milliseconds: ' + seconds13;
+        </script>
+
+        <script>
+            "use strict";
+            // Completed on 4/13/2026 8:31 PM
+            // Completed on VSCode HTML JavaScript first and convert to Java
+            // Saved to CodingBat.com
+            // Array-2 > only14
+
+            // Given an array of ints, return true if every element is a 1 or a 4.
+
+            function only14(numbers) {
+                // Loop and check if current array elements is 1 or 4 and return true
+                // If any other number is detected return false
+
+                for (let i = 0; i < numbers.length; i++) {
+                    let current_array_element_var = numbers[i];
+
+                    if (current_array_element_var !== 1 && current_array_element_var !== 4) {
+                        return false;
+                    }
+                }
+                return true;
+            }
+
+            test_function();
+
+            function test_function() {
+                let test = [
+                    { input: [1, 4, 1, 4], expected: true },           // test 1
+                    { input: [1, 4, 2, 4], expected: false },          // test 2
+                    { input: [1, 1], expected: true },                 // test 3
+                    { input: [4, 1], expected: true },                 // test 4
+                    { input: [2], expected: false },                   // test 5
+                    { input: [], expected: true },                     // test 6
+                    { input: [1, 4, 1, 3], expected: false },          // test 7
+                    { input: [3, 1, 3], expected: false },             // test 8
+                    { input: [1], expected: true },                    // test 9
+                    { input: [4], expected: true },                    // test 10
+                    { input: [3, 4], expected: false },                // test 11
+                    { input: [1, 3, 4], expected: false },             // test 12
+                    { input: [1, 1, 1], expected: true },              // test 13
+                    { input: [1, 1, 1, 5], expected: false },          // test 14
+                    { input: [4, 1, 4, 1], expected: true }            // test 15
+                ];
+
+                for (let i = 0; i < test.length; i++) {
+                    let result = only14(test[i].input);
+                    let expected = test[i].expected;
+
+                    if (result === expected) {
+                        document.write('Test ' + (i + 1) + ': <span style="color: greenyellow">Passed</span><br>');
+                    } else {
+                        document.write('Test ' + (i + 1) + ': <span style="color: rgb(206, 79, 79)">Failed: --- Expected ' + test[i].expected + ' --- Got: ' + result + '</span><br>');
+                    }
+                }
+            }
+        </script>
+    </div>
+    <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+    <div>
+        <p id="clock5463e141">Clock</p>
+        <p>Array-2 > fizzArray</p>
+        <p>Completed on 4/13/2026 4:43 PM</p>
+        <p>No test code</p>
+        <script>
+            let now_asd1xlmz1 = new Date();
+            let seconds_oiade0431z1 = now_asd1xlmz1.getMilliseconds();
+            document.getElementById('clock5463e141').innerHTML = 'Milliseconds: ' + seconds_oiade0431z1;
+        </script>
+
+        <script>
+            "use strict";
+            // Completed on 4/13/2026 4:43 PM
+            // Completed on VSCode HTML JavaScript first and convert to Java
+            // Saved to CodingBat.com
+            // Array-2 > fizzArray
+
+            // Given a number n, create and return a new int array of length n, 
+            // containing the numbers 0, 1, 2, ...n - 1. The given n may be 0, 
+            // in which case just return a length 0 array.You do not need a 
+            // separate if-statement for the length - 0 case; the for-loop should 
+            // naturally execute 0 times in that case, so it just works.The 
+            // syntax to make a new int array is: new int[desired_length]
+
+            let number = 10;
+
+            function fizzArray(number) {
+                let array_lengtn = []
+                for (let i = 0; i < number; i++) {
+                    array_lengtn.push(i);
+                }
+                document.write(array_lengtn);
+            }
+
+        </script>
+    </div>
+    <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
     <div>
         <p id="clock5463e14">Clock</p>
         <p>Array-2 > more14</p>
@@ -36,7 +321,6 @@
             // Completed on VSCode HTML JavaScript first and convert to Java
             // Saved to CodingBat.com
             // Array-2 > more14
-
             function more14(numbers) {
                 // Given an array of ints, return true if the number of 1's is greater than the number of 4's
                 // Loop and check array element for '1's and '4's
