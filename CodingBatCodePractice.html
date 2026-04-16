@@ -21,6 +21,265 @@
 <body>
     <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
     <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+    <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+    <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+    <div>
+        <p id="clock6107a11">Clock</p>
+        <p>Array-2 > twoTwo</p>
+        <p>Completed on 4/16/2026 10:06 PM</p>
+        <script>
+            let now131109gaz1 = new Date();
+            let seconds131850laz1 = now131109gaz1.getMilliseconds();
+            document.getElementById('clock6107a11').innerHTML = 'Milliseconds: ' + seconds131850laz1;
+        </script>
+        <script>
+            "use strict";
+            // Completed on 4/16/2026 10:06 PM
+            // Completed on VSCode HTML JavaScript first and convert to Java
+            // Saved to CodingBat.com
+            // Array-2 > twoTwo
+
+            // Return true if the group of N numbers at the start and end of the array are the same.
+            // For example, with {5, 6, 45, 99, 13, 5, 6}, the ends are the same for n=0 and n=2, and
+            // false for n=1 and n=3. You may assume that n is in the range 0..nums.length inclusive.
+
+            function sameEnds(numbers, get_length) {
+                let first_length = numbers.slice(0, get_length);
+                let second_length = numbers.slice(numbers.length - get_length);
+                if (first_length.toString() === second_length.toString()) {
+                    return true;
+                }
+                return false;
+            }
+            test_09_function();
+            function test_09_function() {
+                const test = [
+                    { input: [5, 6, 45, 99, 13, 5, 6], value: 1, expected: false }, // test 1
+                    { input: [5, 6, 45, 99, 13, 5, 6], value: 2, expected: true },  // test 2
+                    { input: [5, 6, 45, 99, 13, 5, 6], value: 3, expected: false }, // test 3
+                    { input: [1, 2, 5, 2, 1], value: 1, expected: true },           // test 4
+                    { input: [1, 2, 5, 2, 1], value: 2, expected: false },          // test 5
+                    { input: [1, 2, 5, 2, 1], value: 0, expected: true },           // test 6
+                    { input: [1, 2, 5, 2, 1], value: 5, expected: true },           // test 7
+                    { input: [1, 1, 1], value: 0, expected: true },                 // test 8
+                    { input: [1, 1, 1], value: 1, expected: true },                 // test 9
+                    { input: [1, 1, 1], value: 2, expected: true },                 // test 10
+                    { input: [1, 1, 1], value: 3, expected: true },                 // test 11
+                    { input: [1], value: 1, expected: true },                       // test 12
+                    { input: [], value: 0, expected: true },                        // test 13
+                    { input: [4, 2, 4, 5], value: 1, expected: false }              // test 14
+                ];
+                let count_success_test = 0;
+                for (let i = 0; i < test.length; i++) {
+                    let result = sameEnds(test[i].input, test[i].value);
+                    let expected = test[i].expected;
+                    if (result === expected) {
+                        count_success_test++;
+                        document.write('Test ' + (i + 1) + ': <span style="color: greenyellow">Successful: 👍</span><br>');
+                    } else {
+                        document.write('Test ' + (i + 1) + ': <span style="color: rgb(206, 79, 79)">Tested positive for failure: 👎<br> --- Expected: ' + test[i].expected + ' --- Got: ' + result + '</span><br>');
+                    }
+                }
+                if (count_success_test === test.length) {
+                    document.write('<span style="color: greenyellow"><br>All systems on all sectors are running.</span>');
+                } else {
+                    let failures = test.length - count_success_test;
+                    let only_one_sector_failed = 1;
+                    if (only_one_sector_failed === 1) {
+                        document.write('<span style="color: rgb(206, 79, 79)"><br>System alert: ' + failures + ' sector is offline.</span>');
+                    } else {
+                        document.write('<span style="color: rgb(206, 79, 79)"><br>System alert: ' + failures + ' sectors are offline.</span>');
+                    }
+                }
+            }
+        </script>
+    </div>
+    <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+    <div>
+        <p id="clock6107a1">Clock</p>
+        <p>Array-2 > twoTwo</p>
+        <p>Completed on 4/16/2026 9:12 PM</p>
+        <script>
+            let now131109gaz = new Date();
+            let seconds131850laz = now131109gaz.getMilliseconds();
+            document.getElementById('clock6107a1').innerHTML = 'Milliseconds: ' + seconds131850laz;
+        </script>
+        <script>
+            "use strict";
+            // Completed on 4/16/2026 9:12 PM
+            // Completed on VSCode HTML JavaScript first and convert to Java
+            // Saved to CodingBat.com
+            // Array-2 > twoTwo
+
+            // Given an array of ints, return true if every 2 that appears in the array is next to another 2.
+
+            function twotwo(numbers) {
+                let something = false;
+                let other_something = false;
+                let count = 0;
+                for (let i = 0; i < numbers.length; i++) {
+                    let two_found = numbers[i] === 2;
+                    if (two_found) {
+                        count++;
+                        something = true;
+                    }
+                    if (something) {
+                        if (numbers[i + 1] != 2) {
+                            other_something = true;
+                        }
+                    }
+                    if (other_something) {
+                        if (numbers[i + 1] === 2) {
+                            return false;
+                        }
+                    }
+                }
+                if (count === 1) {
+                    return false;
+                }
+                return true;
+            }
+
+            test_9i_function();
+            // document.write(twotwo(some));
+
+            function test_9i_function() {
+                const test = [
+                    { input: [4, 2, 2, 3], expected: true },              // test 1
+                    { input: [2, 2, 4], expected: true },                 // test 2
+                    { input: [2, 2, 4, 2], expected: false },             // test 3
+                    { input: [1, 3, 4], expected: true },                 // test 4
+                    { input: [1, 2, 2, 3, 4], expected: true },           // test 5
+                    { input: [1, 2, 3, 4], expected: false },             // test 6
+                    { input: [2, 2], expected: true },                    // test 7
+                    { input: [2, 2, 7], expected: true },                 // test 8
+                    { input: [2, 2, 7, 2, 1], expected: false },          // test 9
+                    { input: [4, 2, 2, 2], expected: true },              // test 10
+                    { input: [2, 2, 2], expected: true },                 // test 11
+                    { input: [1, 2], expected: false },                   // test 12
+                    { input: [2], expected: false },                      // test 13
+                    { input: [1], expected: true },                       // test 14
+                    { input: [], expected: true },                        // test 15
+                    { input: [5, 2, 2, 3], expected: true },              // test 16
+                    { input: [2, 2, 5, 2], expected: false }              // test 17
+                ];
+
+                let count_success_test = 0;
+                for (let i = 0; i < test.length; i++) {
+                    let result = twotwo(test[i].input);
+                    let expected = test[i].expected;
+                    if (result === expected) {
+                        count_success_test++;
+                        document.write('Test ' + (i + 1) + ': <span style="color: greenyellow">Successful: 👍</span><br>');
+                    } else {
+                        document.write('Test ' + (i + 1) + ': <span style="color: rgb(206, 79, 79)">Tested positive for failure: 👎<br> --- Expected: ' + test[i].expected + ' --- Got: ' + result + '</span><br>');
+                    }
+                }
+
+
+                if (count_success_test === test.length) {
+                    document.write('<span style="color: greenyellow"><br>All systems on all sectors are running.</span>');
+                } else {
+                    let failures = test.length - count_success_test;
+                    let only_one_sector_failed = 1;
+                    if (only_one_sector_failed) {
+                        document.write('<span style="color: rgb(206, 79, 79)"><br>System alert: ' + failures + ' sector is offline.</span>');
+                    } else {
+                        document.write('<span style="color: rgb(206, 79, 79)"><br>System alert: ' + failures + ' sectors are offline.</span>');
+                    }
+                }
+            }
+        </script>
+    </div>
+    <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+    <div>
+        <p id="clock6107a">Clock</p>
+        <p>Array-2 > haveThree</p>
+        <p>Completed on 4/15/2026 10:51 PM</p>
+        <script>
+            let now131109ga = new Date();
+            let seconds131850la = now131109ga.getMilliseconds();
+            document.getElementById('clock6107a').innerHTML = 'Milliseconds: ' + seconds131850la;
+        </script>
+        <script>
+            "use strict";
+            // Completed on 4/15/2026 10:51 PM
+            // Completed on VSCode HTML JavaScript first and convert to Java
+            // Saved to CodingBat.com
+            // Array-2 > haveThree
+
+            // Given an array of ints, return true if the value 3 appears in the array exactly 
+            // 3 times, and no 3's are next to each other.
+            function haveThree(numbers) { // JavaScript version
+                let count = 0;
+                for (let i = 0; i < numbers.length - 1; i++) {
+                    let three_found = numbers[i] === 3;
+                    if (three_found) {
+                        if (i === 0) {
+                            if (numbers[1] === 3) {
+                                return false;
+                            }
+                        }
+                        if (i >= 1) {
+                            if ((numbers[i - 1] === 3) || (numbers[i + 1] === 3)) {
+                                return false;
+                            }
+                        }
+                        count++;
+                    }
+                }
+                if (numbers[numbers.length - 1] === 3) {
+                    count++;
+                }
+                if (count === 3) {
+                    return true;
+                }
+                return false;
+            }
+            test_90_function();
+            function test_90_function() {
+                const test = [
+                    { input: [3, 1, 3, 1, 3], expected: true },              // test 1
+                    { input: [3, 1, 3, 3], expected: false },                // test 2
+                    { input: [3, 4, 3, 3, 4], expected: false },             // test 3
+                    { input: [1, 3, 1, 3, 1, 2], expected: false },          // test 4
+                    { input: [1, 3, 1, 3, 1, 3], expected: true },           // test 5
+                    { input: [1, 3, 3, 1, 3], expected: false },             // test 6
+                    { input: [1, 3, 1, 3, 1, 3, 4, 3], expected: false },    // test 7
+                    { input: [3, 4, 3, 4, 3, 4, 4], expected: true },        // test 8
+                    { input: [3, 3, 3], expected: false },                   // test 9
+                    { input: [1, 3], expected: false },                      // test 10
+                    { input: [3], expected: false },                         // test 11
+                    { input: [1], expected: false },                         // test 12
+                    { input: [3, 3, 2], expected: false }                    // test 13
+                ];
+                let count_success_test = 0;
+                for (let i = 0; i < test.length; i++) {
+                    let result = haveThree(test[i].input);
+                    let expected = test[i].expected;
+
+                    if (result === expected) {
+                        count_success_test++;
+                        document.write('Test ' + (i + 1) + ': <span style="color: greenyellow">Successful: 👍</span><br>');
+                    } else {
+                        document.write('Test ' + (i + 1) + ': <span style="color: rgb(206, 79, 79)">Tested positive for failure: 👎<br> --- Expected: ' + test[i].expected + ' --- Got: ' + result + '</span><br>');
+                    }
+                }
+                if (count_success_test === test.length) {
+                    document.write('<span style="color: greenyellow"><br>All systems on all sectors are running.</span>');
+                } else {
+                    let failures = test.length - count_success_test;
+                    let only_one_sector_failed = 1;
+                    if (only_one_sector_failed) {
+                        document.write('<span style="color: rgb(206, 79, 79)"><br>System alert: ' + failures + ' sector is offline.</span>');
+                    } else {
+                        document.write('<span style="color: rgb(206, 79, 79)"><br>System alert: ' + failures + ' sectors are offline.</span>');
+                    }
+                }
+            }
+        </script>
+    </div>
+    <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
     <div>
         <p id="clock6107">Clock</p>
         <p>Array-2 > modThree</p>
@@ -39,7 +298,6 @@
 
             // Given an array of ints, return true if the array contains either 3 
             // even or 3 odd values all next to each other.
-
             function modThree(numbers) {
                 let first_array_element_even = false;
                 let second_array_element_even = false;
@@ -48,17 +306,14 @@
                     first_array_element_even = numbers[i] % 2 == 0;
                     second_array_element_even = numbers[i + 1] % 2 == 0;
                     third_array_element_even = numbers[i + 2] % 2 == 0;
-
                     let all_three_elements_are_even =
                         first_array_element_even &&
                         second_array_element_even &&
                         third_array_element_even;
-
                     let all_three_elements_are_odd =
                         !first_array_element_even &&
                         !second_array_element_even &&
                         !third_array_element_even;
-
                     if (all_three_elements_are_even) {
                         return true;
                     }
@@ -68,9 +323,7 @@
                 }
                 return false;
             }
-
             test_84y_function();
-
             function test_84y_function() {
                 const test = [
                     { input: [2, 1, 3, 5], expected: true },            // test 1
@@ -116,7 +369,6 @@
             let seconds131850 = now131109.getMilliseconds();
             document.getElementById('clock610').innerHTML = 'Milliseconds: ' + seconds131850;
         </script>
-
         <script>
             "use strict";
             // Completed on 4/15/2026 12:45 PM
@@ -197,7 +449,6 @@
             let seconds13185 = now13110.getMilliseconds();
             document.getElementById('clock61').innerHTML = 'Milliseconds: ' + seconds13185;
         </script>
-
         <script>
             "use strict";
             // Completed on 4/15/2026 12:45 PM
@@ -218,19 +469,15 @@
                             return true;
                         }
                     }
-
                     if (numbers.length - 2) {
                         if (found_7_gap_7) {
                             return true;
                         }
                     }
-
                 }
                 return false;
             }
-
             test675_function();
-
             function test675_function() {
                 const test = [
                     { input: [1, 7, 7], expected: true },               // test 1
@@ -248,15 +495,12 @@
                     { input: [1, 7], expected: false },                 // test 13
                     { input: [7], expected: false }                     // test 14
                 ];
-
                 let count_successful_test = 0;
                 let test_length = 0
-
                 for (let i = 0; i < test.length; i++) {
                     let result = has77(test[i].input);
                     let expected = test[i].expected;
                     test_length = test.length;
-
                     if (result === expected) {
                         count_successful_test++;
                         document.write('Test ' + (i + 1) + ': <span style="color: greenyellow">Passed: 👍</span><br>');
@@ -264,7 +508,6 @@
                         document.write('Test ' + (i + 1) + ': <span style="color: rgb(206, 79, 79)">Tested positive for failure: 👎<br> --- Expected ' + test[i].expected + ' --- Got: ' + result + '</span><br>');
                     }
                 }
-
                 if (count_successful_test === test_length) {
                     document.write('<span style="color: greenyellow"><br>All systems on all sectors are running.</span>');
                 } else {
@@ -284,7 +527,6 @@
             let seconds13187 = now13117.getMilliseconds();
             document.getElementById('clock67').innerHTML = 'Milliseconds: ' + seconds13187;
         </script>
-
         <script>
             "use strict";
             // Completed on 4/14/2026 4:25 PM
@@ -305,7 +547,6 @@
                 for (let i = 0; i < numbers.length - 1; i++) {
                     let twos_found_next_to_each_other = (numbers[i] === 2) && (numbers[i + 1] === 2);
                     let fours_found_next_to_each_other = (numbers[i] === 4) && (numbers[i + 1] === 4);
-
                     if (twos_found_next_to_each_other) {
                         two_pairs_found = true;
                     }
@@ -314,7 +555,6 @@
                     }
                 }
                 let twos_and_fours_cant_be_together = two_pairs_found && four_pairs_found;
-
                 if (twos_and_fours_cant_be_together) {
                     return false;
                 }
@@ -365,7 +605,6 @@
             let seconds1311 = now131.getMilliseconds();
             document.getElementById('clock131').innerHTML = 'Milliseconds: ' + seconds1311;
         </script>
-
         <script>
             "use strict";
             // Completed on 4/14/2026 2:12 PM
@@ -378,7 +617,6 @@
             // length 0 array. Note: String.valueOf(xxx) will make the String form of most 
             // types. The syntax to make a new string array is: new String[desired_length]
             let number11 = 10;
-
             function fizzArray(number) {
                 let array_lengtn = []
                 for (let i = 0; i < number; i++) {
@@ -387,7 +625,6 @@
                 }
                 document.write(array_lengtn);
             }
-
             fizzArray(number11);
         </script>
     </div>
@@ -401,7 +638,6 @@
             let seconds13z = now13z.getMilliseconds();
             document.getElementById('clock13z').innerHTML = 'Milliseconds: ' + seconds13z;
         </script>
-
         <script>
             "use strict";
             // Completed on 4/14/2026 1:12 PM
@@ -418,9 +654,7 @@
                 }
                 return true;
             }
-
             test543_function();
-
             function test543_function() {
                 let test = [
                     { input: [1, 2, 1, 3], value: 1, expected: true },              // test 1
@@ -463,7 +697,6 @@
             let seconds13s = now13s.getMilliseconds();
             document.getElementById('clock13s').innerHTML = 'Milliseconds: ' + seconds13s;
         </script>
-
         <script>
             "use strict";
             // Completed on 4/13/2026 10:56 PM
@@ -477,7 +710,6 @@
                 // Given an array of ints, return true if every element is a 1 or a 4.
                 let one_found = false;
                 let four_found = false;
-
                 for (let i = 0; i < numbers.length; i++) {
                     if (numbers[i] === 1) {
                         one_found = true;
@@ -486,14 +718,11 @@
                         four_found = true;
                     }
                 }
-
                 if (one_found && four_found) {
                     return false;
                 }
-
                 return true;
             }
-
             document.write(no14(number1));
         </script>
     </div>
@@ -507,7 +736,6 @@
             let seconds131 = now131.getMilliseconds();
             document.getElementById('clock13').innerHTML = 'Milliseconds: ' + seconds131;
         </script>
-
         <script>
             "use strict";
             // Return an array that contains the exact same numbers as the given array, 
@@ -535,9 +763,7 @@
                 new_array.push(array_front.concat(array_back));
                 return new_array;
             }
-
             testu8q7_function();
-
             function testu8q7_function() {
                 let test = [
                     { input: [1, 0, 1, 0, 0, 1, 1], expected: [0, 0, 0, 1, 1, 1, 1] },
@@ -550,7 +776,6 @@
                     { input: [2, 1], expected: [2, 1] },
                     { input: [], expected: [] }
                 ];
-
                 for (let i = 0; i < test.length; i++) {
                     let result = evenOdd(test[i].input);
                     let expected = test[i].expected;
@@ -574,7 +799,6 @@
             let seconds13 = now13.getMilliseconds();
             document.getElementById('clock13').innerHTML = 'Milliseconds: ' + seconds13;
         </script>
-
         <script>
             "use strict";
             // Completed on 4/13/2026 8:31 PM
@@ -597,9 +821,7 @@
                 }
                 return true;
             }
-
             test_function();
-
             function test_function() {
                 let test = [
                     { input: [1, 4, 1, 4], expected: true },           // test 1
